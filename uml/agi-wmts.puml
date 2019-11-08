@@ -5,8 +5,8 @@ component "QGIS server" as wms
 database "PostgreSQL" as db
 component "S3" as s3
 
-avdpool--db 
-wms--db 
-wmts--wms : use
+avdpool--db : write
+wms--db : read
+wmts--wms : read
 wmts--s3 : write
 @enduml
