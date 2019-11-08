@@ -1,0 +1,12 @@
+@startuml agi-wmts
+component "avdpool import" as avdpool
+component "Mapcache seeder" as wmts
+component "QGIS server" as wms
+database "PostgreSQL" as db
+component "S3" as s3
+
+avdpool--db 
+wms--db 
+wmts--wms : use
+wmts--s3 : write
+@enduml

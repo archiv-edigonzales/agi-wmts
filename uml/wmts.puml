@@ -1,0 +1,15 @@
+@startuml agi-wmts
+() "HTTP" as wsinterface
+() "HTTP" as wmsinterface
+component "avdpool-wmts" as avdpool
+component "mapcache-seeder-wmts" as wmts
+component "qgis3-server-wmts" as wms
+database "edit-db-wmts" as db
+
+#webservice-->db : use
+#wms--> db : use
+#webservice->wms : use
+
+#wsinterface-webservice
+#wms-wmsinterface
+@enduml
